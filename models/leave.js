@@ -1,8 +1,9 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const arrivalSchema = new mongoose.Schema({
+const leaveSchema = new mongoose.Schema({
     branch: String,
-    arrivalDate: Date,
+    from: Date,
+    to: Date,
     hostel: String,
     mobileNo: Number,
     status: {
@@ -18,6 +19,6 @@ const arrivalSchema = new mongoose.Schema({
     }
 })
 
-const Arrival = mongoose.model('Arrival', arrivalSchema)
+const Leave = mongoose.model('Leave', leaveSchema)
 
-module.exports = Arrival
+module.exports = Leave
