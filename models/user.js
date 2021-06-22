@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
-const User = require('../../CollegeManager-main/models/User');
+//const User = require('../../Campus_Organiser/models/user');
 
 const UserSchema = new mongoose.Schema({
     name:String,
