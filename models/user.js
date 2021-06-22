@@ -1,18 +1,30 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
+const User = require('../../CollegeManager-main/models/User');
 
-const userSchema = new mongoose.Schema({
-    name: String,
+const UserSchema = new mongoose.Schema({
+    name:String,
     username: String,
     password: String,
     role: String,
-    vaccinated: {
-        type: Boolean,
-        default: false
+    vaccine:{
+        type:String,
+        default: 'no'
+    },
+    college: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "College"
+        },
+
+        name: String
     }
 }, {
     timestamps: true
 })
 
-const User = mongoose.model('User', userSchema)
+UserSchema.plugin(passportLocalMongoose);
 
-module.exports = User
+const UserModel = mongoose.model("User", UserSchema)
+
+module.exports = UserModel
