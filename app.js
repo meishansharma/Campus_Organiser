@@ -131,9 +131,9 @@ app.post('/register', (req, res) => {
 
     newUser.college.id = req.body.college;
 
-    College.findById(req.body.college, (err, college) => {
-        newUser.college.name = college.name;
-    })
+    // College.findById(req.body.college, (err, college) => {
+    //     newUser.college.name = college.name;
+    // })
 
     User.register(newUser, req.body.password, (err, user) => {
         if(err){
