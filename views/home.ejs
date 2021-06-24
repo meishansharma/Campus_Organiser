@@ -10,4 +10,7 @@
       </div>
     </div>
 </div>
+<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+  <%- include('./dashboard.ejs', {users: users, hostels: hostels}); -%>
+</div>
 <%- include('./partials/footer.ejs'); -%>
