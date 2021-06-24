@@ -17,7 +17,7 @@ const arrivalSchema = new mongoose.Schema({
         name: String
     }
 })
-
+//added arrival.js
 const Arrival = mongoose.model('Arrival', arrivalSchema)
 
 module.exports = Arrival
